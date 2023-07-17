@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SobreController;
-use App\Http\Controllers\Admin\SupportController;
+use App\Http\Controllers\Admin\{SupportController};
 use Illuminate\Support\Facades\Route;
 
 // Rota para a página inicial
@@ -11,7 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/support', [SupportController::class, 'index']);
+Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');
+
+Route::get('/supports/create', [SupportController::class, 'create'])->name('supports.create');
 
 // Rota para a página de contato, usando o controlador SiteController
 Route::get('/contato', [SiteController::class, 'contact']);
