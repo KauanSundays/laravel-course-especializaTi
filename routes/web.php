@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SobreController;
+use App\Http\Controllers\Admin\SupportController;
 use Illuminate\Support\Facades\Route;
 
 // Rota para a página inicial
@@ -9,6 +10,8 @@ Route::get('/', function () {
     // Retorna a visualização (view) chamada 'welcome'
     return view('welcome');
 });
+
+Route::get('/support', [SupportController::class, 'index']);
 
 // Rota para a página de contato, usando o controlador SiteController
 Route::get('/contato', [SiteController::class, 'contact']);
