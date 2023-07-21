@@ -1,7 +1,5 @@
 <h1>Nova Duvida</h1>
 
-
-
 <form action=" {{route('supports.store')}} " method="POST">
     @csrf
     <input type="text" placeholder="Assunto" name="subject">
