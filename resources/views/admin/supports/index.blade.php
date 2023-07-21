@@ -5,7 +5,7 @@
 
 <table>
     <thead>
-        <th>Subject</th>
+        <th>Assunto</th>
         <th>Status</th>
         <th>Description</th>
         <th></th>
@@ -17,7 +17,9 @@
                 <td>{{ $support->subject }}</td>
                 <td>{{ $support->status }}</td>
                 <td>{{ $support->body}}</td>
-                <td>></td>
+                <td>
+                    <a href="{{route('supports.show', $support->id)}}">ver mais</a>
+                </td>
             </tr>
         @endforeach
     </tbody>

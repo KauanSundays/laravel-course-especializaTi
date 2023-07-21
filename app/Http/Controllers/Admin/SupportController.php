@@ -19,7 +19,13 @@ class SupportController extends Controller
     public function show(string|int $id) 
     {
         $support = Support::find($id);
-        dd($support);
+
+        if (!$support)
+        {
+            return back(); // Manda de volta
+        }
+
+        return view('admin.supports.show', compact('support'));
     }
 
     public function create()
@@ -32,12 +38,14 @@ class SupportController extends Controller
         $data = $request->all();
         $data['status'] = 'a';
 
-        $support['body'] = $supprt['body'] ?? null; // Define o campo 'body' como nulo caso não seja fornecido
+        // Corrigir para atribuir o valor do campo 'description' ao campo 'body'
+        $data['body'] = $data['description'] ?? null;
 
         Support::create($data);
 
         return redirect()->route('supports.index');
     }
+
 
 
 }
