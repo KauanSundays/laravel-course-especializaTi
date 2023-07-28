@@ -1,7 +1,7 @@
-<h1>Detalhes do ticket: {{ $support->id }}</h1>
+<h1>Detalhes do ticket #{{$support->id}} ({{$support->subject}})</h1>
 
 <ul>
-    <li>{{$support->description}}</li>
-    <li>{{$support->status}}</li>
-    <li>{{$support->body}}</li>
+    <li>Assunto: {{$support->subject}}</li>
+    <li>Status: {{$support->status}}</li>
+    <li>Descrição: {{$support->body}}</li>
 </ul>
