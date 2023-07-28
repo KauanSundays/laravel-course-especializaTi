@@ -22,6 +22,7 @@ class="btn btn-primary">
                 <td>{{ $support->body}}</td>
                 <td>
                     <a href="{{route('supports.show', $support->id)}}">Ir</a>
+                    <a href="{{route('supports.edit', $support->id)}}">Edit</a>
                 </td>
             </tr>
         @endforeach
