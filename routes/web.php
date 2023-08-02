@@ -25,6 +25,7 @@ Route::get('/contato', [SiteController::class, 'contact']);
 // Rota para a página "sobre", usando o controlador SobreController
 Route::get('/sobre', [SobreController::class, 'sobre']);
 
+Route::delete('/supports/{support}', [SupportController::class, 'delete'])->name('supports.delete');
 
 // Route::get: É um método do Laravel que define uma rota HTTP GET. Isso significa que essa rota responderá apenas a solicitações GET feitas para a URL especificada.
 // '/contato': É o URL (endereço) da rota. Nesse caso, a rota corresponde à URL '/contato'. Quando um usuário acessar essa URL, a função correspondente será executada.

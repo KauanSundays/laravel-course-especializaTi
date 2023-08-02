@@ -38,7 +38,6 @@ class SupportController extends Controller
         $data = $request->all();
         $data['status'] = 'a';
 
-        // Corrigir para atribuir o valor do campo 'description' ao campo 'body'
         $data['body'] = $data['description'] ?? null;
 
         Support::create($data);
@@ -66,6 +65,14 @@ class SupportController extends Controller
         ]));
 
         return redirect()->route('supports.index');
+    }
+
+    public function delete(Support $support)
+    {
+        $support->delete(); // Deleta o suporte do banco de dados
+
+        return redirect()->route('supports.index')->with('success', 'Suporte deletado com sucesso!');
+        // Redireciona para a página inicial dos suportes com uma mensagem de sucesso
     }
 
 
